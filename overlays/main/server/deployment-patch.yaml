@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-test-server
+spec:
+  template:
+    spec:
+      containers:
+        - name: kube-test-server
+          image: kube-img-registry.kr.ncr.ntruss.com/kube-test-server-main:latest

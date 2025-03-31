@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-test-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kube-test-server
+  template:
+    metadata:
+      labels:
+        app: kube-test-server
+    spec:
+      containers:
+        - name: kube-test-server
+          image: kube-test-server:latest
+          ports:
+            - containerPort: 8080
+      imagePullSecrets:
+        - name: ncr-secret
