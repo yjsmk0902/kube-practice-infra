@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: kube-test-ingress
 spec:
-  ingressClassName: path-ingress
+  ingressClassName: ncp-alb
   rules:
     - http:
         paths:
