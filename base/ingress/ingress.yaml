@@ -3,10 +3,17 @@ kind: Ingress
 metadata:
   name: kube-test-ingress
 spec:
-  ingressClassName: ncp-alb
+  ingressClassName: alb
   rules:
     - http:
         paths:
+          - path: /argocd
+            pathType: Prefix
+            backend:
+              service:
+                name: argocd-server
+                port:
+                  number: 80
           - path: /main-api
             pathType: Prefix
             backend:
@@ -14,13 +21,13 @@ spec:
                 name: kube-test-server-main
                 port:
                   number: 80
-          - path: /dev-api
-            pathType: Prefix
-            backend:
-              service:
-                name: kube-test-server-dev
-                port:
-                  number: 80
+#          - path: /dev-api
+#            pathType: Prefix
+#            backend:
+#              service:
+#                name: kube-test-server-dev
+#                port:
+#                  number: 80
 #          - path: /
 #            pathType: Prefix
 #            backend:

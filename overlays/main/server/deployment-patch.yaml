@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kube-test-server
+  name: kube-test-server-main
 spec:
   template:
     spec:

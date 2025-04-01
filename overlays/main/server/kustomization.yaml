@@ -7,3 +7,7 @@ patches:
     target:
       kind: Deployment
       name: kube-test-server
+  - path: service-patch.yaml
+    target:
+      kind: Service
+      name: kube-test-server
