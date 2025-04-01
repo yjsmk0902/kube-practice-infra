@@ -4,4 +4,4 @@ metadata:
   name: kube-test-server-main
 spec:
   selector:
-    app: kube-test-server
+    app: kube-test-server-main

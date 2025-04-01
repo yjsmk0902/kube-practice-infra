@@ -3,8 +3,14 @@ kind: Deployment
 metadata:
   name: kube-test-server-main
 spec:
+  selector:
+    matchLabels:
+      app: kube-test-server-main
   template:
+    metadata:
+      labels:
+        app: kube-test-server-main
     spec:
       containers:
-        - name: kube-test-server
+        - name: kube-test-server-main
           image: kube-img-registry.kr.ncr.ntruss.com/kube-test-server-main:latest
