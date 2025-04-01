@@ -10,3 +10,9 @@ spec:
           envFrom:
             - configMapRef:
                 name: env-main-server
+          readinessProbe:
+            httpGet:
+              path: /main-api/health-check
+          livenessProbe:
+            httpGet:
+              path: /main-api/health-check
