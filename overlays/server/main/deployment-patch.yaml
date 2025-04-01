@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-test-server
+spec:
+  template:
+    spec:
+      containers:
+        - name: kube-test-server
+          envFrom:
+            - configMapRef:
+                name: env-main-server

@@ -7,3 +7,8 @@ images:
   - name: kube-test-server
     newName: kube-img-registry.kr.ncr.ntruss.com/kube-test-server-main
     newTag: latest
+patches:
+  - path: deployment-patch.yaml
+    target:
+      kind: Deployment
+      name: kube-test-server
