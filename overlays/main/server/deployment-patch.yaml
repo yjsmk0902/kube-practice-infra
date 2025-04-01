@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kube-test-server-main
+  name: kube-test-server
 spec:
   selector:
     matchLabels:
@@ -12,5 +12,5 @@ spec:
         app: kube-test-server-main
     spec:
       containers:
-        - name: kube-test-server-main
+        - name: kube-test-server
           image: kube-img-registry.kr.ncr.ntruss.com/kube-test-server-main:latest
