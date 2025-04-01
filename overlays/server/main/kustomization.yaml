@@ -2,6 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../../../base/server
+nameSuffix: -main
 images:
   - name: kube-test-server
     newName: kube-img-registry.kr.ncr.ntruss.com/kube-test-server-main
