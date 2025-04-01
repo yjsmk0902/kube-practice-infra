@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: kube-test-server-main
-spec:
-  selector:
-    app: kube-test-server-main
