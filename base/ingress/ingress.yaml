@@ -7,13 +7,6 @@ spec:
   rules:
     - http:
         paths:
-          - path: /argocd
-            pathType: Prefix
-            backend:
-              service:
-                name: argocd-server.argocd
-                port:
-                  number: 80
           - path: /main-api
             pathType: Prefix
             backend:
