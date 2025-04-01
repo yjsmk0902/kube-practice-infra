@@ -3,3 +3,7 @@ kind: Kustomization
 resources:
   - deployment.yaml
   - service.yaml
+images:
+  - name: kube-test-server
+    newName: kube-img-registry.kr.ncr.ntruss.com/kube-test-server
+    newTag: latest
