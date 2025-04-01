@@ -1,20 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kube-test-server-main
+  name: kube-test-server
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: kube-test-server-main
+      app: kube-test-server
   template:
     metadata:
       labels:
-        app: kube-test-server-main
+        app: kube-test-server
     spec:
       containers:
-        - name: kube-test-server-main
-          image: kube-test-server:latest
+        - name: kube-test-server
           ports:
             - containerPort: 8080
           readinessProbe:
