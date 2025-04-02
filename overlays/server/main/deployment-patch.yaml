@@ -12,7 +12,7 @@ spec:
                 name: env-main-server
           readinessProbe:
             httpGet:
-              path: /health-check
+              path: /main-api/health-check
           livenessProbe:
             httpGet:
-              path: /health-check
+              path: /main-api/health-check
