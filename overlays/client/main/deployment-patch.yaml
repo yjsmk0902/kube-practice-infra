@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-test-client
+spec:
+  template:
+    spec:
+      containers:
+        - name: kube-test-client
+          envFrom:
+            - configMapRef:
+                name: env-main-client
+          readinessProbe:
+            httpGet:
+              path: /health-check
+          livenessProbe:
+            httpGet:
+              path: /health-check
