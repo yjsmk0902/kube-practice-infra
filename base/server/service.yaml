@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: kube-test-server
 spec:
+  type: NodePort
   selector:
     app: kube-test-server
   ports:
