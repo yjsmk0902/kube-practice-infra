@@ -1,0 +1,20 @@
+# main 환경 값 (overlays/client/main의 값들)
+image:
+  repository: kube-img-registry.kr.ncr.ntruss.com/kube-test-server-main
+  tag: latest
+
+# main 환경의 패치 내용
+readinessProbe:
+  path: /main-api/health-check
+
+livenessProbe:
+  path: /main-api/health-check
+
+service:
+  annotations:
+    alb.ingress.kubernetes.io/healthcheck-path: /main-api
+
+# ConfigMap 참조 설정
+envFrom:
+  - configMapRef:
+      name: env-main-server
